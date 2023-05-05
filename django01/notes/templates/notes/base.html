@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My App</title>
+    <style>
+        .post-it {
+            background-color: #FFEB99;
+            color: #333;
+            border: 1px solid #333;
+            padding: 10px;
+            width: 200px;
+            height: 200px;
+            position: relative;
+            margin: 20px;
+            float: left;
+            font-size: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .post-it:before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            margin-left: -10px;
+            border-bottom: 10px solid #FFEB99;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+        }
+
+        .post-it:after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            margin-left: -10px;
+            border-top: 10px solid #FFEB99;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+        }
+    </style>
+</head>
+<body>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
