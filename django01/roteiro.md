@@ -1,6 +1,10 @@
 
 # Django - tutorial
 
+Roteiro da disciplina:
+https://devlife.insper-comp.com.br/aulas/web/introducao/conceitos-django
+
+
 Referências:
 https://docs.djangoproject.com/en/4.2/intro/tutorial01/
 
