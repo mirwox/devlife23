@@ -73,7 +73,7 @@ Ou o nome do app, se for outro
 
 Adicionar os apps a no arquivo settings.py principal:
 
-```
+```python
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -85,21 +85,26 @@ INSTALLED_APPS = [
 ]
 ```
 
-### PAra gerar os modelos de dadosÇ
+### Para gerar os modelos de dados
 
+```bash
 python manage.py makemigrations notes
+```
 
 
 Editar a URL no projeto principal para apontar para a app:
 
+```python
   urlpatterns = [
       path('admin/', admin.site.urls),
       path("notes/", include("notes.urls")),
   ]
+```
 
 
 Dentro do App:
 
+```python
 from django.urls import path
 
 from . import views
@@ -107,7 +112,7 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
 ]
-
+```
 
 Templates
 
@@ -150,13 +155,15 @@ http://127.0.0.1:8000/admin/
 
 Para criar admin:
 
-  python manage.py createsuperuser
-
+```bash
+python manage.py createsuperuser
+```
 
 ## Rota raw
 
 Definir o método  definir a rota no urls.py/urlpatterns
 
+```python
 from django.urls import path
 
 from . import views
@@ -166,6 +173,7 @@ urlpatterns = [
     path('raw', views.raw, name='raw'),
 
 ]
+```
 
 ## Criar modelo
 
@@ -185,31 +193,40 @@ class PostIt(models.Model):
 
 ### Gerar migrações
 
+```bash
 python manage.py makemigrations notes
-
+```
 
 ### Ver sql gerado
 
+```bash
 python manage.py sqlmigrate polls 0001
+```
 
 ### Migrar
 
+```bash
 python manage.py migrate
+```
 
 ### Brincar com objetos
 
+```bash
 python manage.py shell
+```
 
-
+```
 >>> from notes.models import PostIt
 >>> PostIt.objects.all()
 <QuerySet []>
-
+```
 
 ### Inserindo objetos no banco
 
+```python
 nota = PostIt(title=title, content=content)
 nota.save()
+
 
 ### Mostrando objetos na tela
 
