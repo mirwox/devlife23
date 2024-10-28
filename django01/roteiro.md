@@ -35,12 +35,15 @@ E *fold* é a pasta em que o projeto vai ser criado. Para usar o diretório atua
 
 Para executar
 
+```bash
   python manage.py runserver
+```
 
-Pode ser que:
+Pode ser que seja necessário:
 
+```
   python manage.py migrate
-
+```
 
 ## App
 
